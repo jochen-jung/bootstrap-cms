@@ -1,0 +1,60 @@
+/*!
+ * style.css
+ */
+/*
+body {
+  padding-bottom: 40px;
+}
+
+.sidebar-nav {
+  padding: 9px 0;
+}
+
+@media (max-width: 980px) {
+  .navbar-text.pull-right {
+    float: none;
+    padding-left: 5px;
+    padding-right: 5px;
+  }
+}
+
+.navbar .nav>li>.dropdown-menu:after {
+  border: none;
+}
+
+.hero-unit h1 {
+  font-size: 24px;
+}
+
+.inline-label {
+  display: inline-block;
+  margin-left: 0.6em;
+  margin-bottom: 0;
+}
+
+.navbar-link, .iconlink {
+  margin-left: 0.5em;
+}
+
+.navbar a {
+  color: #999;
+}
+.navbar a:hover,
+.navbar a:focus {
+  color: #fff;
+}
+*/
+
+/* Remove bootstrap icons, for elusive is used */
+/*
+[class^="icon-"], [class*=" icon-"] {
+  line-height: 1;
+  background-image: none;
+
+  display: inline-block;
+  width: 14px;
+  height: 14px;
+  margin-top: 1px;
+  vertical-align: text-top;
+}
+*/

@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="0.91">
+	<channel>
+		<title>Lansuite CMS</title>
+		<link>http://lansuite-test.orgapage.de</link>
+		<description></description>
+		<language>de-de</language>
+		<copyright></copyright>
+		<item>
+			<title>test</title>
+			<description>test</description>
+			<author>ADMIN ADMIN (ADMIN)</author>
+			<pubDate>Wed, 9 Jan 2013 12:35:52 +0100</pubDate>
+			<link>http://lansuite-test.orgapage.de:80/index.php?mod=news&action=comment&newsid=1</link>
+		</item>
+	</channel>
+</rss>

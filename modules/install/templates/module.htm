@@ -1,0 +1,12 @@
+<table width="100%" cellspacing="0" cellpadding="3" class="row_value">
+<tr>
+	<td rowspan="2" width="48"><img src="{$img}" width="48" height="48" alt="Modul-Icon"></td>
+	<td width="140" valign="top"><input type="checkbox" name="{$name}"{$active}{$readonly}> <b>{$caption}</b></td>
+	<td colspan="2" valign="top"><small>{$description}{$req}</small></td>
+</tr>
+<tr>
+	<td width="140"> V: {$version} (<i>{$state}</i>)</td>
+	<td nowrap>{if $showLinks}<small><a href="index.php?mod=install&action=modules&step=4&module={$name}">Reset</a>{$db_link}{$menu_link}{$settings_link}{$help_link}</small>{/if}</td>
+	<td align="right"><small><i>By: {$author}</i></small></td>
+</tr>
+</table>

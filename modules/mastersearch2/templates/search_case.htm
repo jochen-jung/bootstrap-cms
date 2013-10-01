@@ -1,0 +1,40 @@
+<form name="ms_search" method="get" action="{$action}">
+{foreach from=$HiddenGetFields key=k item=v}
+  <input type="hidden" name="{$k}" value="{$v}" />
+{/foreach}
+
+<div class="row">
+{foreach $SearchInputs as $input}
+  <div class="col-md-4">
+    <label for="{$input.name}">{$input.caption}</label>
+    {if $input.type == 'text'}
+      <input type="text" id="{$input.name}" name="{$input.name}" value="{$input.value}"
+         size="30" onmouseover="this.focus();" />
+    {elseif $input.type == 'select'}
+      <select name="{$input.name}" class="form" onmouseover="this.focus();" {$input.multiple}>
+      {html_options options=$input.options selected=$input.selected}
+      </select>
+    {else}
+      &nbsp;
+    {/if}
+    {if $input.helpletId != ''}
+      <a href="#" onclick="javascript:var w=window.open('index.php?mod=helplet&action=helplet&design=base&module=mastersearch2&helpletid={$input.helpletId}','_blank','width=700,height=500,resizable=no,scrollbars=yes');" class="underline_on_hover">? {$helpletText}</a>
+    {/if}
+  </div>
+  {if $input@iteration is div by 3}</div><div class="row">{/if}
+{/foreach}
+<div class="col-md-4">
+  <label>&nbsp;</label>
+  <button type="submit" class="btn btn-primary" name="suchen">Suchen</button>
+</div>
+{if $quicklinks|@count > 0}
+  <div class="col-md-4">
+  {foreach from=$quicklinks item=quicklink}
+    <div class="Button" style="display:inline-block">
+      <a href="{$quicklink.link}">{$quicklink.name}</a>
+    </div>
+  {/foreach}
+  </div>
+{/if}
+</div>
+</form>

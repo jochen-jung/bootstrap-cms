@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<lansuite>
+	<header>
+		<filetype>LanSuite</filetype>
+		<version>2.0</version>
+		<source>http://www.lansuite.de</source>
+		<date>2010-07-01 03:51</date>
+	</header>
+	<table>
+		<table_head>
+			<name>translation</name>
+		</table_head>
+		<content>
+			<entry>
+				<id>a82be0f551b8708bc08eb33cd9ded0cf</id>
+				<org>Information</org>
+				<en>Information</en>
+				<es>Información</es>
+				<fr>Information</fr>
+				<nl>Informatie</nl>
+				<it>Informazioni</it>
+				<file>about</file>
+			</entry>
+		</content>
+	</table>
+</lansuite>

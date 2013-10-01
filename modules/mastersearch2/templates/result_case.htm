@@ -1,0 +1,113 @@
+<script language="JavaScript" type="text/javascript">
+<!--
+MultiSelectActions = new Array({$multi_select_actions});
+MultiSelectSecurityQuest = new Array({$security_questions});
+-->
+</script>
+{if $pages != ''}
+  <form name="MSEntsPerPage" method="get" action="" rel="nofollow">
+  {foreach from=$HiddenGetFields key=k item=v}
+    <input type="hidden" name="{$k}" value="{$v}" />
+  {/foreach}
+  <div class="row">
+    <div class="col-md-8"><div class="pagination">
+      {$pages}
+    </div></div>
+    <div class="col-md-4 pagination">
+      <select name="EntsPerPage" onchange="this.form.submit();">
+        {html_options options=$EntsPerPage selected=$EntPerPage}
+      </select>
+    </div>
+  </div>
+  </form>
+{/if}
+
+<form name="ms_result{$ms_number}" method="post" action="">
+<table class="row table table-condensed mastSearch">
+<tr>
+  {foreach $head as $v}
+  	<th{if $v.width} width="{$v.width}"{/if}><a href="{$v.link}" rel="nofollow">{$v.entry}</a></th>
+  {/foreach}
+  {if $maxIcons > 0}
+    <th>&nbsp;</th>
+  {/if}
+</tr>
+
+{foreach $body as $line}
+<tr onClick="markieren_permanent(this);" onMouseOver="markieren(this);" onMouseOut="unmarkieren(this);">
+  {foreach $line.line as $v}
+    <td{if $v.width} width="{$v.width}"{/if} {$line.bgcolor}>
+    {if $v.link != ''}<a href="{$v.link}" class="menu">{/if}
+      {$v.entry}
+    {if $v.link != ''}</a>{/if}
+    </td>
+  {/foreach}
+  {if $line.icons|@count > 0}
+    <td align="right" style="white-space:nowrap; text-align: right" {$line.bgcolor}> {* width="{$maxIcons*24}" *}
+    {foreach from=$line.icons item=v}
+      {if $v.link != ''}<a href="{$v.link}" class="menu iconlink" title="{$v.title}">{/if}{*{if
+        $v.name == 'edit' or $v.name == 'remove'
+          or $v.name == 'lock' or $v.name == 'envelope' or $v.name == 'key'
+          or $v.name == 'person' or $v.name == 'arrow-right'
+      }<span class="glyphicon glyphicon-{$v.name}"></span>{else}*}<img src="design/images/icon_{$v.name}.png" alt="{$v.name}"
+          width="20" height="20" border="0">
+        {* /if *}
+      {if $v.link != ''}</a>{/if}
+    {/foreach}
+    </td>
+  {/if}
+</tr>
+{/foreach}
+
+</table>
+</form>
+
+<div class="row">
+  <div class="col-md-4 pagination">
+  {if $MultiOptions != '' }
+  <select name="action_select" onChange="javascript:change_selection(this, {$ms_number});">
+    <option value="">{$MultiCaption}</option>
+    <optgroup label="Auswahl">
+      <option value="select_all" style="background-image: url(design/images/icon_selection_all.png); background-repeat: no-repeat; height:16px;">Alle auswählen</option>
+      <option value="select_none" style="background-image: url(design/images/icon_selection_none.png); background-repeat: no-repeat; height:16px;">Keine auswählen</option>
+      <option value="select_invert" style="background-image: url(design/images/icon_selection_invert.png); background-repeat: no-repeat; height:16px;">Auswahl umkehren</option>
+    </optgroup>
+    <optgroup label="Aktion">
+      {foreach from=$MultiOptions item=v}
+        <option value="{$v.value}" {if $v.BGIcon != ''} style="background-image: url(design/images/icon_{$v.BGIcon}.png); background-repeat: no-repeat; height:20px;"{/if}>{$v.caption}</option>
+      {/foreach}
+    </optgroup>
+  </select>
+  {/if}
+  </div>
+
+  <div class="col-md-4 pagination">
+  {if $pages != ''}
+    {$pages}
+  {else}
+    {$EntsFound}
+  {/if}
+  </div>
+
+  <div class="col-md-4 pagination" style="text-align:right">
+    {*
+    <select name="EntsPerPage" onchange="$(this).parent().find('input[name=design]').val(''); $(this).parent().find('input[name=msExport]').val(''); this.form.submit();">
+      {html_options options=$EntsPerPage selected=$EntPerPage}
+    </select>
+    *}
+
+    <form name="MSEntsPerPage" method="get" action="" rel="nofollow">
+      {foreach from=$HiddenGetFields key=k item=v}
+        <input type="hidden" name="{$k}" value="{$v}" />
+      {/foreach}
+      <input type="hidden" name="design" value="">
+      <input type="hidden" name="msExport" value="">
+      <button class="btn"
+        onclick="$(this).parent().find('input[name=design]').val('base');
+          $(this).parent().find('input[name=msExport]').val('csv');
+          this.form.submit();"
+      >CSV-Export</button>
+    </form>
+  </div>
+</div>
+

@@ -1,0 +1,27 @@
+<table width="100%" cellspacing="0" cellpadding="3">
+<tr> 
+	<td height="20" class="row_key"><b>{$caption}</b></td>
+	<td height="20" class="row_key"> 
+		<div align="right">{$date}</div>
+	</td>
+</tr>
+<tr>
+	<td class="row_value" colspan="2">
+		{$icon}
+		{$text}
+	</td>
+</tr>
+<tr> 
+	<td class="row_key" height="20">
+		{$buttons}
+		{if isset($comments)}
+			<sup>{$comments}</sup>
+		{/if}
+		<br />&nbsp;
+	</td>
+	<td class="row_key" height="20"> 
+		<div align="right"><b>{$username}</b></div>
+		<br />&nbsp;
+	</td>
+</tr>
+</table>

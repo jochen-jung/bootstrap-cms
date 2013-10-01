@@ -1,0 +1,4 @@
+User-agent: *
+Disallow: design/templates/
+Disallow: inc/
+Disallow: modules/

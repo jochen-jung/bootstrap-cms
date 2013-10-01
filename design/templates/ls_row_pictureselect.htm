@@ -1,0 +1,13 @@
+<table width="100%" cellspacing="0" cellpadding="3">
+
+{foreach name=outer item=pic_row from=$pics}
+<tr>
+{foreach from=$pic_row item=v}
+  <td><img src="{$v.src}" width="{$v.width}" height="{$v.height}"{$v.IconClick} /><br />{$v.InputForm}</td> 
+{/foreach}
+</tr>
+{/foreach}
+
+</table>
+<hr>
+Auswahl: <img src="design/images/transparent.png" id="PreviewIcon" name="PreviewIcon" />

@@ -1,0 +1,14 @@
+<form name="SearchBox" method="GET" action="index.php" onSubmit="javascript:SubmitDropDown(this);">
+  <input type="hidden" id="mod" name="mod" value="" />
+  <input type="hidden" id="action" name="action" value="" />
+
+	<label for="text" class="copyright">Suchbegriff</label>
+	<input type="text" name="search_input[0]" value="{$value}" class="form" style="width: 138px" />
+
+	<label for="SearchBoxModule" class="copyright">Modul</label>
+  <select id="SearchBoxModule" name="SearchBoxModule" class="form" style="width: 138px">
+	{$module}
+  </select>
+
+	<div><input type="submit" class="Button" value="Suchen" /></div>
+</form>

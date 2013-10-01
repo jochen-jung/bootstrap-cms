@@ -1,0 +1,233 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<config>
+  <typedefinition>
+    <head>
+      <name>mailselect</name>
+    </head>
+    <entries>
+  		<entry>
+  			<value>0</value>
+  			<description>Nein</description>
+  		</entry>
+  		<entry>
+  			<value>1</value>
+  			<description>Ja, als System-Mail</description>
+  		</entry>
+  		<entry>
+  			<value>2</value>
+  			<description>Ja, an seine Mail-Adresse</description>
+  		</entry>
+  		<entry>
+  			<value>3</value>
+  			<description>Ja, beides</description>
+  		</entry>
+    </entries>
+  </typedefinition>
+  <typedefinition>
+    <head>
+      <name>signon</name>    
+    </head>
+    <entries>
+                <entry>
+                        <value>0</value>
+                        <description>Feld deaktiviert</description>
+                </entry>
+                <entry>
+                        <value>1</value>
+                        <description>Optionale Angabe</description>
+                </entry>
+                <entry>
+                        <value>2</value>
+                        <description>Pflichtfeld</description>
+                </entry>
+    </entries>
+  </typedefinition>
+  <typedefinition>
+    <head>
+      <name>signon_on_off</name>    
+    </head>
+    <entries>
+                <entry>
+                        <value>0</value>
+                        <description>Feld deaktiviert</description>
+                </entry>
+                <entry>
+                        <value>2</value>
+                        <description>Pflichtfeld</description>
+                </entry>
+    </entries>
+  </typedefinition>
+  <group>
+    <head>
+      <name>Berechtigungen: Eigene Daten ändern</name>
+    </head>
+    <items>
+    	<item>
+    		<name>user_avatarupload</name>
+    		<type>boolean</type>
+    		<default>1</default>
+    		<description>Darf der Benutzer ein Avatarbild uploaden?</description>
+    	</item>
+    	<item>
+    		<name>user_self_details_change</name>
+    		<type>boolean</type>
+    		<default>0</default>
+    		<description>Sollen die User ihre Details im Nachhinein selbst ändern dürfen?</description>
+    	</item>
+    </items>
+  </group>
+  <group>
+    <head>
+      <name>Felder bei Anmeldung</name>
+    </head>
+    <items>
+        <item>
+                <name>signon_show_firstname</name>
+                <type>signon</type>
+                <default>2</default>
+                <description>Vorname</description>
+        </item>
+        <item>
+                <name>signon_show_lastname</name>
+                <type>signon</type>
+                <default>2</default>
+                <description>Nachname</description>
+        </item>
+        <item>
+                <name>signon_show_street</name>
+                <type>signon</type>
+                <default>1</default>
+                <description>Straße und Hausnummer</description>
+        </item>
+        <item>
+                <name>signon_show_city</name>
+                <type>signon</type>
+                <default>1</default>
+                <description>PLZ und Ort</description>
+        </item>
+        <item>
+                <name>signon_show_perso</name>
+                <type>signon</type>
+                <default>0</default>
+                <description>Personalausweis</description>
+        </item>
+        <item>
+                <name>signon_show_birthday</name>
+                <type>signon</type>
+                <default>0</default>
+                <description>Geburtstag</description>
+        </item>
+        <item>
+                <name>signon_show_gender</name>
+                <type>signon</type>
+                <default>0</default>
+                <description>Geschlecht</description>
+        </item>
+        <item>
+                <name>signon_show_agb</name>
+                <type>signon_on_off</type>
+                <default>0</default>
+                <description>AGB bestätigen</description>
+        </item>
+        <item>
+                <name>signon_show_voll</name>
+                <type>signon_on_off</type>
+                <default>0</default>
+                <description>U18-Vollmacht</description>
+        </item>
+        <item>
+                <name>signon_show_newsletter</name>
+                <type>signon</type>
+                <default>0</default>
+                <description>Newsletter abonnieren</description>
+        </item>
+        <item>
+                <name>signon_show_telefon</name>
+                <type>signon</type>
+                <default>0</default>
+                <description>Telefon</description>
+        </item>
+        <item>
+                <name>signon_show_handy</name>
+                <type>signon</type>
+                <default>0</default>
+                <description>Handy</description>
+        </item>
+        <item>
+                <name>signon_show_icq</name>
+                <type>signon</type>
+                <default>0</default>
+                <description>ICQ</description>
+        </item>
+        <item>
+                <name>signon_show_msn</name>
+                <type>signon</type>
+                <default>0</default>
+                <description>MSN</description>
+        </item>
+        <item>
+                <name>signon_show_skype</name>
+                <type>signon</type>
+                <default>0</default>
+                <description>Skype</description>
+        </item>
+    </items>
+  </group>
+  <group>
+    <head>
+      <name>AGB</name>
+    </head>
+    <items>
+        <item>
+                <name>signon_agblink</name>
+                <type>string</type>
+                <default>/index.php?mod=info2&amp;action=show_info2&amp;submod=Regeln%20(AGB)</default>
+                <description>Link zu den AGB</description>
+        </item>
+    </items>
+  </group>
+  <group>
+    <head>
+      <name>Passwort-Generierung und -Mitteilung</name>
+    </head>
+    <items>
+        <item>
+                <name>signon_password_mail</name>
+                <type>boolean</type>
+                <default>1</default>
+                <description>Dem neuen Teilnehmer sein Passwort per eMail zusenden?</description>
+        </item>
+        <item>
+                <name>signon_password_view</name>
+                <type>boolean</type>
+                <default>0</default>
+                <description>Dem neuen Teilnehmer sein Passwort anzeigen?</description>
+        </item>
+        <item>
+                <name>signon_autopw</name>
+                <type>boolean</type>
+                <default>0</default>
+                <description>Soll das Passwort automatisch generiert werden?</description>
+        </item>
+    </items>
+  </group>
+  <group>
+    <head>
+      <name>Sicherheit</name>
+    </head>
+    <items>
+        <item>
+                <name>signon_captcha</name>
+                <type>boolean</type>
+                <default>0</default>
+                <description>Captcha-Code verlangen (Hilft gegen Bot-Accounts)</description>
+        </item>
+        <item>
+                <name>signon_def_locked</name>
+                <type>boolean</type>
+                <default>0</default>
+                <description>Sind neue Accounts automatisch gesperrt?</description>
+        </item>
+    </items>
+  </group>
+</config>
